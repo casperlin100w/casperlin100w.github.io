@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 3496237 */
+  font-family: "iconfont";
+  /* Project id 3496237 */
   src: url('iconfont.woff2?t=1680876375651') format('woff2'),
-       url('iconfont.woff?t=1680876375651') format('woff'),
-       url('iconfont.ttf?t=1680876375651') format('truetype');
+    url('iconfont.woff?t=1680876375651') format('woff'),
+    url('iconfont.ttf?t=1680876375651') format('truetype');
 }
 
 .iconfont {
@@ -221,3 +222,23 @@
   content: "\e7b4";
 }
 
+.icon-instagram:before {
+  content: "";
+  display: inline-block;
+  /* 調整寬高，通常 1.1em 或 1.2em 能修正視覺縮小的問題 */
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: middle;
+  background-image: url("/image/sidebar/instagram.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* 調整亮度：透過 opacity 讓它不要這麼死白，與旁邊同步 */
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  /* 增加滑鼠移入時的過渡動畫 */
+}
+
+/* 滑鼠移上去時變亮，模擬原生圖標的互動效果 */
+.icon-instagram:hover:before {
+  opacity: 1;
+}
