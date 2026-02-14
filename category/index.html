@@ -64,7 +64,41 @@
 </div>
     <div id="footer">
     <div><span class='face'>ღゝ◡╹)ノ♡</span></div><div>【如果有遠方<span><i class='iconfont icon-like-fill'></i></span>你就是方向】</div><div>&copy; 2026-2026 FanFan. All Rights Reserved.</div>
+    <div class="runtime-info" style="margin-top: 10px; font-size: 13px; color: #888;">
+        <span id="runtime_span"></span>
+    </div>
 </div>
+
+<script type="text/javascript">
+    function show_runtime() {
+        // 每秒執行一次 
+        setTimeout(show_runtime, 1000);
+        
+        // 抓取 _config.yml 中的 WebsiteStartDate
+        var start_time = new Date("2026-02-12"); 
+        var now_time = new Date();
+        var duration = now_time.getTime() - start_time.getTime();
+        
+        // 計算各單位時間
+        var days = Math.floor(duration / (24 * 3600 * 1000));
+        var hours = Math.floor((duration % (24 * 3600 * 1000)) / (3600 * 1000));
+        var minutes = Math.floor((duration % (3600 * 1000)) / (60 * 1000));
+        var seconds = Math.floor((duration % (60 * 1000)) / 1000);
+        
+        // 修正邏輯：如果計算結果為負數（日期設定在未來），則全部顯示為 0
+        if (duration < 0) {
+            days = 0; hours = 0; minutes = 0; seconds = 0;
+        }
+
+        // 更新到網頁上
+        var element = document.getElementById("runtime_span");
+        if (element) {
+            element.innerHTML = "本站運行 " + days + " 天 " + hours + " 小時 " + minutes + " 分 " + seconds + " 秒";
+        }
+    }
+    // 確保頁面載入後開始執行
+    show_runtime();
+</script>
     <div id="sidebar">
     <div class="menu-wrap" style="display:none;">
         
