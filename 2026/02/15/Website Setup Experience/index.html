@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            標籤 - 閒聊
+            架自己的Blog | Setup Mine Blog Website
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -32,15 +32,46 @@
 <meta name="generator" content="Hexo 8.1.1"></head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/archive.css">
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">標籤歸檔</h1>
+                <h1 class="header-subtitle">架自己的Blog | Setup Mine Blog Website</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text Chinese"></p>
-                    <p class="article-info-text English"></p>                  
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 發布日期：2026-02-15
+                        </span>
+                        
+                            
+                                <span id="/2026/02/15/Website Setup Experience/" class="leancloud_visitors" data-flag-title="架自己的Blog | Setup Mine Blog Website">
+                                    <i class="iconfont icon-browse"></i> 瀏覽次數：<sapn class="leancloud-visitors-count"></span>
+                                </span>
+                            
+                            
+                                <span>
+                                    <i class="iconfont icon-interactive"></i> 留言：<span class="valine-comment-count" data-xid="/2026/02/15/Website Setup Experience/"></span>
+                                </span>
+                              
+                        
+                    </p>
+                    
+                        
+                            <span class="category-color">Hello World</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">心得</span>
+                        
+                            <span class="tag-color">閒聊</span>
+                        
+                            <span class="tag-color">繁體中文</span>
+                        
+                            <span class="tag-color">EN</span>
+                        
+                    
                 </div>
             
         </div>
@@ -49,67 +80,83 @@
 </div>
 <div id="container">
     
-        
-            <!-- 归档页面、分类归档页面、标签归档页面 -->
-            <div class="articles">
-                <div class="articles-wrap">
-                    <span class="archive-move-on"></span>
-                    <span class="archive-counter">
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h1 id="架設網站心得"><a href="#架設網站心得" class="headerlink" title="架設網站心得"></a>架設網站心得</h1><p>我過去一直以為Blog是甚麼老人才會用的撥接式網路那個年代的產物，結果我後來發現這東西其實蠻流行的。<br>之前也有嘗試問AI去做但每次都不知道為甚麼都會報錯，身邊也都沒有很熟的人有做過Blog，後來就不了了之。<br>一直到參加 <a href="/2026/02/14/SCISTxSCAICT%202026/" title="SCISTxSCAICT 2026 聯合寒訓">SCISTxSCAICT 2026 聯合寒訓</a> 之後認識了WalNut，我們兩個住同一間房間，後來我看到他也有做Blog，然後我就問他能不能也幫我搞一個，想不到跟他盧一下下他就答應了。</p>
+<p><img src="/images/WebsiteSetupExperience1.png" alt="alt text"></p>
+<p>他幫我把前面搞資料夾的工作搞好了，我只需要把一些數據改一改然後推到Github上就行了<br>大概過了兩三天，我的Blog終於上線了！也就是你現在看到的這個網站！<br>這幾天感謝很多人幫忙，中途還出了一點小插曲…</p>
+<h2 id="小插曲"><a href="#小插曲" class="headerlink" title="小插曲"></a>小插曲</h2><p>正常流程是先跑 <code>hexo clean</code> <code>hexo g</code> <code>hexo s</code> 甚麼的，結果在跑測試的時候不小心搞到整個爆掉。<br>本來想說去把Github上正常版本的抓回來回朔，然後我不小心跑成 <code>hexo d</code> !!!!!!<br>後來要去找以前的版本，然後不小心在後台<strong>把它刪了</strong>……<br>我真的是差一點爆炸，最後你猜怎麼救回來的?<br><br><br><br><code>CTRL+Z</code><br><br><br><br>好啦至少救回來了。<br>大概就是這樣啦~</p>
+<h1 id="Website-Setup-Experience"><a href="#Website-Setup-Experience" class="headerlink" title="Website Setup Experience"></a>Website Setup Experience</h1><p>I used to think blogs were some ancient relic from the dial-up era that only old people used, but I later realized they’re actually still pretty popular.<br>I tried asking AI to help me build one before, but for some reason, it kept throwing errors. Since I didn’t know anyone personally who had experience with blogging, I eventually just gave up.<br>That was until I attended <a href="/2026/02/14/SCISTxSCAICT%202026/" title="SCISTxSCAICT 2026 聯合寒訓">SCISTxSCAICT 2026 United Winter Camp</a> and met WalNut. We were roommates, and when I saw he had his own blog, I asked if he could help me set one up. Surprisingly, after a little bit of pestering, he agreed!</p>
+<p><img src="/images/WebsiteSetupExperience1.png" alt="alt text"></p>
+<p>He handled all the initial folder setup for me, so all I had to do was tweak some data and push it to GitHub.<br>After about two or three days, my blog is finally live! Which is exactly what you’re looking at right now!<br>I’m really grateful to everyone who helped me out these past few days, even though there was a bit of a hiccup along the way…</p>
+<p>The Hiccup<br>The normal workflow is to run <code>hexo clean</code>, <code>hexo g</code>, <code>hexo s</code> and so on, but while I was running tests, I accidentally broke the whole thing.<br>I thought about pulling the working version back from GitHub to revert the changes, but then I accidentally ran <code>hexo d</code> !!!!!!<br>Then, while trying to find the previous version in the backend, I accidentally <strong>deleted</strong> it…<br>I was honestly on the verge of a meltdown. In the end, guess how I saved it?<br><br><br><br><code>CTRL+Z</code><br><br><br><br>Well, at least I got it back.<br>And that’s pretty much the story!</p>
+<p><small>Translated By Gemini.</small></p>
+
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="FanFan 凡凡">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>FanFan 凡凡
+        <br>
+        <span class="suffix-box-title">文章出處：</span><a href="/2026/02/15/Website%20Setup%20Experience/" target="_blank">架自己的Blog | Setup Mine Blog Website</a>
+        <br>
+        <span class="suffix-box-title">作者簡介：</span>世界遼闊，我想陪你一起走。
+        <br>
+        <span class="suffix-box-title">關於主題：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版權聲明：</span>除非文章特別說明，否則均採用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 協議，轉載時請註明出處。
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                    <div class="category">
+                        分類：
                         
-                            當前標籤：<span class="tag">閒聊</span>
+                            <a href="/categories/Hello-World/">Hello World</a>
                         
-                    </span>
-                    
-                    
+                    </div>
+                
+                
+                    <div class="tag">
+                        標籤：
                         
-                            <div class="archive-title">
-                                <h2 class="archive-year">2026</h2>
-                            </div>
-                            
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2026/02/15/Website%20Setup%20Experience/"><span>架自己的Blog | Setup Mine Blog Website</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">02-15</span>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tags/%E5%BF%83%E5%BE%97/">心得</a>
+                        
+                            <a href="/tags/%E9%96%92%E8%81%8A/">閒聊</a>
+                        
+                            <a href="/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/">繁體中文</a>
+                        
+                            <a href="/tags/EN/">EN</a>
+                        
+                    </div>
+                
+                <div class="article-prev-next">
                     
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2026/02/14/SCISTxSCAICT%202026/"><span>SCISTxSCAICT 2026 聯合寒訓</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">02-14</span>
-                                </div>
-                            </div>
-                        </div>
                     
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2026/02/14/hello-world(en)/"><span>Hello World, my name is FanFan ! [EN]</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">02-14</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2026/02/13/hello-world(zh)/"><span>Hello World, my name is FanFan ! [中文]</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">02-13</span>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="/2026/02/14/SCISTxSCAICT%202026/" class="next-prefix">» </a> 下一篇：    <a href="/2026/02/14/SCISTxSCAICT%202026/" title="發布於 2026-02-14 01:00">SCISTxSCAICT 2026 聯合寒訓</a>
                     
                 </div>
             </div>
             
+    <div class="article-comments">
         
+            <div class="comments-title">
+                評論列表
+            </div>
+        
+        <div class="comments-content"></div>
+    </div>
+    
+ 
+        </div>
     
 </div>
     <div id="footer">
