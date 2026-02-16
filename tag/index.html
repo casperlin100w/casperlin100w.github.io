@@ -137,19 +137,7 @@
                         </li>
                     
                         <li class="">
-                            <a href="/category" class="" target="_self">
-                                <i class="fa-solid fa-folder-tree"></i>  分類
-                            </a>
-                        </li>
-                    
-                        <li class=" active ">
-                            <a href="/tag" class="" target="_self">
-                                <i class="fa-solid fa-tags"></i>  標籤
-                            </a>
-                        </li>
-                    
-                        <li class="">
-                            <a href="/archive" class="" target="_self">
+                            <a href="/archives" class="" target="_self">
                                 <i class="fa-solid fa-archive"></i>  歸檔
                             </a>
                         </li>
@@ -157,12 +145,6 @@
                         <li class="">
                             <a href="/about" class="" target="_self">
                                 <i class="fa-solid fa-user"></i>  關於
-                            </a>
-                        </li>
-                    
-                        <li class="">
-                            <a href="/link" class="" target="_self">
-                                <i class="fa-solid fa-link"></i>  連結
                             </a>
                         </li>
                     
@@ -175,6 +157,18 @@
                         <li class="">
                             <a href="/portfolio" class="" target="_self">
                                 <i class="fa-solid fa-briefcase"></i>  作品集
+                            </a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="/category" class="" target="_self">
+                                <i class="fa-solid fa-folder-tree"></i>  分類
+                            </a>
+                        </li>
+                    
+                        <li class=" active ">
+                            <a href="/tag" class="" target="_self">
+                                <i class="fa-solid fa-tags"></i>  標籤
                             </a>
                         </li>
                     
@@ -422,7 +416,7 @@
         MenuNotice : {
             enable : true,
             notice : "Everything Will Be Alright, Tomorrow Will Be Fine.",
-            speed  : 20
+            speed  : 30
         },
         MenuList : [
             
@@ -436,27 +430,9 @@
                 },
             
                 {
-                    name   : " 分類",
-                    icon   : "fa-solid fa-folder-tree",
-                    href   : "/category",
-                    type   : "category",
-                    class  : "",
-                    target : "_self"
-                },
-            
-                {
-                    name   : " 標籤",
-                    icon   : "fa-solid fa-tags",
-                    href   : "/tag",
-                    type   : "tag",
-                    class  : "",
-                    target : "_self"
-                },
-            
-                {
                     name   : " 歸檔",
                     icon   : "fa-solid fa-archive",
-                    href   : "/archive",
+                    href   : "/archives",
                     type   : "archive",
                     class  : "",
                     target : "_self"
@@ -467,15 +443,6 @@
                     icon   : "fa-solid fa-user",
                     href   : "/about",
                     type   : "about",
-                    class  : "",
-                    target : "_self"
-                },
-            
-                {
-                    name   : " 連結",
-                    icon   : "fa-solid fa-link",
-                    href   : "/link",
-                    type   : "link",
                     class  : "",
                     target : "_self"
                 },
@@ -494,6 +461,24 @@
                     icon   : "fa-solid fa-briefcase",
                     href   : "/portfolio",
                     type   : "portfolio",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 分類",
+                    icon   : "fa-solid fa-folder-tree",
+                    href   : "/category",
+                    type   : "category",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 標籤",
+                    icon   : "fa-solid fa-tags",
+                    href   : "/tag",
+                    type   : "tag",
                     class  : "",
                     target : "_self"
                 },
