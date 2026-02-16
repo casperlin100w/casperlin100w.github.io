@@ -82,6 +82,14 @@
         <div id="article">
             <div class="toc"></div>
             <div class="article-body">
+                <div class="article-post-info" style="margin-bottom: 20px; color: #777; font-size: 14px; display: flex; gap: 20px;">
+                    <span>
+                        <i class="iconfont icon-browse"></i> 文章長度：496 字
+                    </span>
+                    <span>
+                        <i class="iconfont icon-time"></i> 閱讀時間：1 分鐘
+                    </span>
+                </div>
                 <h1 id="參加寒訓工人心得"><a href="#參加寒訓工人心得" class="headerlink" title="參加寒訓工人心得"></a>參加寒訓工人心得</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>這次會選擇參加這次的寒訓工人是因為去年下半年就有加入SCIST的工人行列成為文書，<br><del>我相信這一切都是總召Fearnot認為我的處理能力太好</del>，問我願不願意擔任行政組長。<br>我看了一下行事曆……好像沒事？然後我就答應了:D</p>
 <h2 id="過程"><a href="#過程" class="headerlink" title="過程"></a>過程</h2><p>第一天到的時候跟大家還沒很熟，只有我的組員是我學長，<br>其他人大多感覺之前都是有參加一些活動認識的，這倒是我第一次參加。<br>第一天主要的任務是報到，工作人員和學員都要發掛繩、衣服，<br>還好我前一天有準備好所有人的尺寸名單，不然改來改去沒幾個知道自己穿幾號。<br>然後其實整個報到流程結束後我們行政組「理論上」就沒事了，<br>為甚麼說理論上呢？因為後面發生了一堆有的沒的事情……<br>其實到後面我們就是一直在「協助」其他組完成各項任務，<br>像是： <code>活動組</code> 餐點搬運、發放，垃圾處理；  <code>隊輔組</code>  學員動線調整……<br>其實還有很多雜事，有時候真的會覺得自己不是行政是<strong>機動組</strong>了。<br>雖然中途也是有很多行政的工作啦，像是表單製作(這次在活動期間就搞了兩個表單出來)、試算表設計、計時等等，<br>但我覺得…必須給我一個全場MVP了。</p>
 <h2 id="尾聲"><a href="#尾聲" class="headerlink" title="尾聲"></a>尾聲</h2><p>四天三夜過得很快，除了每天晚上睡覺那段時間……<br>認識了很多新朋友，雖然最後很可惜沒有和他們一起去吃慶功宴，<br>但希望還可以有下次，應該說…必須要有下次<br>經歷了一次就開始想要第二次<br>謝謝寒訓的大家<br>好啦，這篇心得大概就這樣啦!掰!</p>
@@ -323,13 +331,41 @@
     <div id="tools">
     <div class="progressbar-top"></div>
     
+    <div class="aplayer"></div>
     <link type="text/css" rel="stylesheet" href="/css/APlayer.css">
     <script type="text/javascript" src="/js/APlayer.min.js"></script>
-    <script type="text/javascript" src="/js/Meting.min.js"></script>
-    <script>
-        var meting_api = 'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+    <script type="text/javascript">
+        const aplayer = new APlayer({
+            container: document.querySelector(".aplayer"),
+            fixed: true,
+            autoplay: false,
+            loop: "all",
+            order: "random",
+            preload: "auto",
+            volume: 0.67,
+            mutex: true,
+            lrcType: 3,
+            audio: [
+                
+                    {
+                        name: "Endless Tears",
+                        artist: "CLIFF EDGE",
+                        cover: "/music/cover/Endless Tears.jpg",
+                        url: "/music/song/Endless Tears.mp3",
+                        lrc: "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name: "幸福在歌唱",
+                        artist: "A-Lin",
+                        cover: "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url: "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc: "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                    },
+                
+            ]
+        });
     </script>
-    <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
 
     <div class="wrap-right">
     <div class="wrap-right-hide">
@@ -743,7 +779,7 @@
         },
 
         Music : {
-            type : "Meting"
+            type : "APlayer"
         },
         APlayer : {
             container : ".aplayer",
@@ -763,6 +799,14 @@
                         cover  : "/music/cover/Endless Tears.jpg",
                         url    : "/music/song/Endless Tears.mp3",
                         lrc    : "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name   : "幸福在歌唱",
+                        artist : "A-Lin",
+                        cover  : "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url    : "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc    : "/music/lrc/幸福在歌唱-A-Lin.lrc"
                     },
                 
             ]

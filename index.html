@@ -69,6 +69,9 @@
                             <span>
                                 <i class="iconfont icon-time"></i> 發布日期：2026-02-15
                             </span>
+                            <span style="margin-left: 12px;">
+                                <i class="iconfont icon-browse"></i> 650 字
+                            </span>
                             
                                 
                                     <span id="/2026/02/15/Website Setup Experience/" class="leancloud_visitors" data-flag-title="架自己的Blog | Setup Mine Blog Website">
@@ -97,6 +100,9 @@
                         <div class="article-info">
                             <span>
                                 <i class="iconfont icon-time"></i> 發布日期：2026-02-14
+                            </span>
+                            <span style="margin-left: 12px;">
+                                <i class="iconfont icon-browse"></i> 496 字
                             </span>
                             
                                 
@@ -127,6 +133,9 @@
                             <span>
                                 <i class="iconfont icon-time"></i> 發布日期：2026-02-14
                             </span>
+                            <span style="margin-left: 12px;">
+                                <i class="iconfont icon-browse"></i> 60 字
+                            </span>
                             
                                 
                                     <span id="/2026/02/14/hello-world(en)/" class="leancloud_visitors" data-flag-title="Hello World, my name is FanFan ! [EN]">
@@ -155,6 +164,9 @@
                         <div class="article-info">
                             <span>
                                 <i class="iconfont icon-time"></i> 發布日期：2026-02-13
+                            </span>
+                            <span style="margin-left: 12px;">
+                                <i class="iconfont icon-browse"></i> 83 字
                             </span>
                             
                                 
@@ -348,13 +360,41 @@
     <div id="tools">
     <div class="progressbar-top"></div>
     
+    <div class="aplayer"></div>
     <link type="text/css" rel="stylesheet" href="/css/APlayer.css">
     <script type="text/javascript" src="/js/APlayer.min.js"></script>
-    <script type="text/javascript" src="/js/Meting.min.js"></script>
-    <script>
-        var meting_api = 'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+    <script type="text/javascript">
+        const aplayer = new APlayer({
+            container: document.querySelector(".aplayer"),
+            fixed: true,
+            autoplay: false,
+            loop: "all",
+            order: "random",
+            preload: "auto",
+            volume: 0.67,
+            mutex: true,
+            lrcType: 3,
+            audio: [
+                
+                    {
+                        name: "Endless Tears",
+                        artist: "CLIFF EDGE",
+                        cover: "/music/cover/Endless Tears.jpg",
+                        url: "/music/song/Endless Tears.mp3",
+                        lrc: "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name: "幸福在歌唱",
+                        artist: "A-Lin",
+                        cover: "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url: "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc: "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                    },
+                
+            ]
+        });
     </script>
-    <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
 
     <div class="wrap-right">
     <div class="wrap-right-hide">
@@ -768,7 +808,7 @@
         },
 
         Music : {
-            type : "Meting"
+            type : "APlayer"
         },
         APlayer : {
             container : ".aplayer",
@@ -788,6 +828,14 @@
                         cover  : "/music/cover/Endless Tears.jpg",
                         url    : "/music/song/Endless Tears.mp3",
                         lrc    : "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name   : "幸福在歌唱",
+                        artist : "A-Lin",
+                        cover  : "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url    : "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc    : "/music/lrc/幸福在歌唱-A-Lin.lrc"
                     },
                 
             ]

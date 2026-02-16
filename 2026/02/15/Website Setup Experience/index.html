@@ -84,6 +84,14 @@
         <div id="article">
             <div class="toc"></div>
             <div class="article-body">
+                <div class="article-post-info" style="margin-bottom: 20px; color: #777; font-size: 14px; display: flex; gap: 20px;">
+                    <span>
+                        <i class="iconfont icon-browse"></i> 文章長度：650 字
+                    </span>
+                    <span>
+                        <i class="iconfont icon-time"></i> 閱讀時間：3 分鐘
+                    </span>
+                </div>
                 <h1 id="架設網站心得"><a href="#架設網站心得" class="headerlink" title="架設網站心得"></a>架設網站心得</h1><p>我過去一直以為Blog是甚麼老人才會用的撥接式網路那個年代的產物，結果我後來發現這東西其實蠻流行的。<br>之前也有嘗試問AI去做但每次都不知道為甚麼都會報錯，身邊也都沒有很熟的人有做過Blog，後來就不了了之。<br>一直到參加 <a href="/2026/02/14/SCISTxSCAICT%202026/" title="SCISTxSCAICT 2026 聯合寒訓">SCISTxSCAICT 2026 聯合寒訓</a> 之後認識了WalNut，我們兩個住同一間房間，後來我看到他也有做Blog，然後我就問他能不能也幫我搞一個，想不到跟他盧一下下他就答應了。</p>
 <p><img src="/images/WebsiteSetupExperience1.png" alt="alt text"></p>
 <p>他幫我把前面搞資料夾的工作搞好了，我只需要把一些數據改一改然後推到Github上就行了<br>大概過了兩三天，我的Blog終於上線了！也就是你現在看到的這個網站！<br>這幾天感謝很多人幫忙，中途還出了一點小插曲…</p>
@@ -329,13 +337,41 @@
     <div id="tools">
     <div class="progressbar-top"></div>
     
+    <div class="aplayer"></div>
     <link type="text/css" rel="stylesheet" href="/css/APlayer.css">
     <script type="text/javascript" src="/js/APlayer.min.js"></script>
-    <script type="text/javascript" src="/js/Meting.min.js"></script>
-    <script>
-        var meting_api = 'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+    <script type="text/javascript">
+        const aplayer = new APlayer({
+            container: document.querySelector(".aplayer"),
+            fixed: true,
+            autoplay: false,
+            loop: "all",
+            order: "random",
+            preload: "auto",
+            volume: 0.67,
+            mutex: true,
+            lrcType: 3,
+            audio: [
+                
+                    {
+                        name: "Endless Tears",
+                        artist: "CLIFF EDGE",
+                        cover: "/music/cover/Endless Tears.jpg",
+                        url: "/music/song/Endless Tears.mp3",
+                        lrc: "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name: "幸福在歌唱",
+                        artist: "A-Lin",
+                        cover: "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url: "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc: "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                    },
+                
+            ]
+        });
     </script>
-    <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
 
     <div class="wrap-right">
     <div class="wrap-right-hide">
@@ -749,7 +785,7 @@
         },
 
         Music : {
-            type : "Meting"
+            type : "APlayer"
         },
         APlayer : {
             container : ".aplayer",
@@ -769,6 +805,14 @@
                         cover  : "/music/cover/Endless Tears.jpg",
                         url    : "/music/song/Endless Tears.mp3",
                         lrc    : "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name   : "幸福在歌唱",
+                        artist : "A-Lin",
+                        cover  : "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url    : "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc    : "/music/lrc/幸福在歌唱-A-Lin.lrc"
                     },
                 
             ]

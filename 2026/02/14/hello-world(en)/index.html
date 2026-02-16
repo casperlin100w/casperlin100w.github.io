@@ -65,9 +65,9 @@
                         
                             <span class="tag-color">閒聊</span>
                         
-                            <span class="tag-color">EN</span>
-                        
                             <span class="tag-color">網站</span>
+                        
+                            <span class="tag-color">EN</span>
                         
                     
                 </div>
@@ -82,6 +82,14 @@
         <div id="article">
             <div class="toc"></div>
             <div class="article-body">
+                <div class="article-post-info" style="margin-bottom: 20px; color: #777; font-size: 14px; display: flex; gap: 20px;">
+                    <span>
+                        <i class="iconfont icon-browse"></i> 文章長度：60 字
+                    </span>
+                    <span>
+                        <i class="iconfont icon-time"></i> 閱讀時間：1 分鐘
+                    </span>
+                </div>
                 <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Alright! Looks like this website is working properly!</p>
 <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello!"></a>Hello!</h2><p>Welcome to FanFan’s Blog! I will continue to update it with diaries, reflections, and other content. Please feel free to comment!</p>
 <p>You can check out the <a href="/about/">About</a> section first; you might get to know me better!</p>
@@ -123,9 +131,9 @@
                         
                             <a href="/tags/%E9%96%92%E8%81%8A/">閒聊</a>
                         
-                            <a href="/tags/EN/">EN</a>
-                        
                             <a href="/tags/%E7%B6%B2%E7%AB%99/">網站</a>
+                        
+                            <a href="/tags/EN/">EN</a>
                         
                     </div>
                 
@@ -323,13 +331,41 @@
     <div id="tools">
     <div class="progressbar-top"></div>
     
+    <div class="aplayer"></div>
     <link type="text/css" rel="stylesheet" href="/css/APlayer.css">
     <script type="text/javascript" src="/js/APlayer.min.js"></script>
-    <script type="text/javascript" src="/js/Meting.min.js"></script>
-    <script>
-        var meting_api = 'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+    <script type="text/javascript">
+        const aplayer = new APlayer({
+            container: document.querySelector(".aplayer"),
+            fixed: true,
+            autoplay: false,
+            loop: "all",
+            order: "random",
+            preload: "auto",
+            volume: 0.67,
+            mutex: true,
+            lrcType: 3,
+            audio: [
+                
+                    {
+                        name: "Endless Tears",
+                        artist: "CLIFF EDGE",
+                        cover: "/music/cover/Endless Tears.jpg",
+                        url: "/music/song/Endless Tears.mp3",
+                        lrc: "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name: "幸福在歌唱",
+                        artist: "A-Lin",
+                        cover: "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url: "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc: "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                    },
+                
+            ]
+        });
     </script>
-    <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
 
     <div class="wrap-right">
     <div class="wrap-right-hide">
@@ -743,7 +779,7 @@
         },
 
         Music : {
-            type : "Meting"
+            type : "APlayer"
         },
         APlayer : {
             container : ".aplayer",
@@ -763,6 +799,14 @@
                         cover  : "/music/cover/Endless Tears.jpg",
                         url    : "/music/song/Endless Tears.mp3",
                         lrc    : "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name   : "幸福在歌唱",
+                        artist : "A-Lin",
+                        cover  : "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url    : "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc    : "/music/lrc/幸福在歌唱-A-Lin.lrc"
                     },
                 
             ]
