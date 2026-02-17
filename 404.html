@@ -200,6 +200,57 @@
                     </a>
                 
             </div> 
+            <div class="sidebar-music-wrapper">
+                <a href="/music" title="進入凡凡的音樂空間">
+                    <div class="vinyl-record">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                </a>
+            </div>
+
+            <style>
+            .sidebar-music-wrapper {
+                margin: 15px auto; /* 調整位置，與上方社群連結保持適當距離 */
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .vinyl-record {
+                width: 60px;
+                height: 60px;
+                background: #1a1a1a; /* 深黑色盤面 */
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 3px solid #333; /* 模擬唱片外框 */
+                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+            }
+
+            /* 模擬黑膠唱片的紋路感 */
+            .vinyl-record::after {
+                content: '';
+                position: absolute;
+                width: 80%;
+                height: 80%;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 50%;
+            }
+
+            .vinyl-record i {
+                font-size: 28px !important;
+                color: #ad7a86; /* 你的主題粉紫色 */
+            }
+
+            .vinyl-record:hover {
+                transform: rotate(360deg); /* 懸停時旋轉 */
+                border-color: #ad7a86;
+                box-shadow: 0 0 20px rgba(173, 122, 134, 0.6);
+            }
+            </style>
         </nav>
         <button class="menu-button-close"></button>
         <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">

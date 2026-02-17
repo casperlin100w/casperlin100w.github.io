@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            標籤 - EN
+            音樂盒
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -32,12 +32,12 @@
 <meta name="generator" content="Hexo 8.1.1"></head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/archive.css">
+    <link type="text/css" rel="stylesheet" href="/css/page.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">標籤歸檔</h1>
+                <h1 class="header-subtitle">音樂盒</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text Chinese"></p>
                     <p class="article-info-text English"></p>                  
@@ -49,46 +49,120 @@
 </div>
 <div id="container">
     
+        <!-- 独立页面 -->
         
-            <!-- 归档页面、分类归档页面、标签归档页面 -->
-            <div class="articles">
-                <div class="articles-wrap">
-                    <span class="archive-move-on"></span>
-                    <span class="archive-counter">
-                        
-                            當前標籤：<span class="tag">EN</span>
-                        
-                    </span>
+            <div id="article">
+                <div class="article-body">
                     
                     
-                        
-                            <div class="archive-title">
-                                <h2 class="archive-year">2026</h2>
-                            </div>
-                            
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2026/02/15/Website%20Setup%20Experience/"><span>架自己的Blog | Setup Mine Blog Website</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">02-15</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2026/02/14/hello-world(en)/"><span>Hello World, my name is FanFan ! [EN]</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">02-14</span>
-                                </div>
-                            </div>
-                        </div>
+<div class="music-page-container">
+    <div class="music-header">
+        <p>🎵 歌詞同步中...</p>
+    </div>
+
+    <div id="player-local"></div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ap = new APlayer({
+            container: document.getElementById('player-local'),
+            fixed: false,
+            autoplay: true,
+            theme: '#ad7a86',
+            loop: 'all',
+            order: 'list',
+            listFolded: false,
+            listMaxHeight: '500px',
+            // --- 關鍵設定：開啟歌詞 ---
+            lrcType: 3, 
+            // -----------------------
+            audio: [
+                {
+                 name: "Endless Tears",
+                 artist: "CLIFF EDGE",
+                 cover: "/music/cover/Endless Tears.jpg",
+                 url: "/music/song/Endless Tears.mp3",
+                 lrc: "/music/lrc/Endless Tears.lrc",
+                },
+                {
+                name: "幸福在歌唱",
+                artist: "A-Lin",
+                cover: "/music/cover/幸福在歌唱-A-Lin.jpg",
+                url: "/music/song/幸福在歌唱-A-Lin.mp3",
+                lrc: "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                },
+                {
+                name: "笑忘歌",
+                artist: "五月天",
+                cover: "/music/cover/笑忘歌-五月天.jpg",
+                url: "/music/song/笑忘歌-五月天.mp3",
+                lrc: "/music/lrc/笑忘歌-五月天.lrc",
+                },
+                {
+                name: "最重要的小事",
+                artist: "五月天",
+                cover: "/music/cover/最重要的小事-五月天.jpg",
+                url: "/music/song/最重要的小事-五月天.mp3",
+                lrc: "/music/lrc/最重要的小事-五月天.lrc",
+                },
+                {
+                name: "Die For You",
+                artist: "Grabbitz,VALORANT",
+                cover: "/music/cover/Die For You-Grabbitz,VALORANT.jpg",
+                url: "/music/song/Die For You-Grabbitz,VALORANT.mp3",
+                lrc: "/music/lrc/Die For You-Grabbitz,VALORANT.lrc",
+                },
+                {
+                name: "SUPERPOWER",
+                artist: "KISS OF LIFE,NATTY,Mark,Valorant",
+                cover: "/music/cover/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.jpg",
+                url: "/music/song/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.mp3",
+                lrc: "/music/lrc/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.lrc",
+                }
+            ]
+        });
+    });
+</script>
+
+<style>
+    /* 讓歌詞顯示得更漂亮 */
+    .aplayer-lrc p {
+        font-size: 16px !important;
+        font-family: "Noto Sans SC", sans-serif !important;
+        color: #666 !important;
+        line-height: 20px !important;
+    }
+    .aplayer-lrc-current {
+        color: #ad7a86 !important; /* 當前歌詞顏色 */
+        font-weight: bold;
+    }
+    
+    .music-page-container {
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        margin-top: 20px;
+    }
+    .music-header { text-align: center; margin-bottom: 40px; }
+    .music-title-font { font-family: "Playball", cursive; font-size: 3.5em; color: #ad7a86; }
+    #player-local { max-width: 800px; margin: 0 auto; box-shadow: 0 15px 40px rgba(0,0,0,0.4); border-radius: 10px;}
+    .article-header { display: none !important; }
+</style>
                     
                 </div>
+                
+    <div class="article-comments">
+        
+        <div class="comments-content"></div>
+    </div>
+    
+ 
             </div>
-            
         
     
 </div>
