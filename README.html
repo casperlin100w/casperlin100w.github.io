@@ -1,0 +1,62 @@
+<h1 id="FanFan’s-Blog"><a href="#FanFan’s-Blog" class="headerlink" title="FanFan’s Blog"></a>FanFan’s Blog</h1><p><img src="https://img.shields.io/badge/hexo-7.0+-blue.svg" alt="Hexo Version"><br><img src="https://img.shields.io/badge/theme-LiveForCode-orange.svg" alt="Theme"><br><img src="https://img.shields.io/badge/player-APlayer-red.svg" alt="Music"><br><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build"></p>
+<hr>
+<h2 id="📅-站點日誌"><a href="#📅-站點日誌" class="headerlink" title="📅 站點日誌"></a>📅 站點日誌</h2><ul>
+<li><strong>博主名稱</strong>: FanFan 凡凡</li>
+</ul>
+<ul>
+<li><strong>啟動時間</strong>: 2026-02-12</li>
+<li><strong>運行時長</strong>: 透過 <code>footer.ejs</code> 動態計算顯示於頁尾。</li>
+<li><strong>技術棧</strong>: Hexo 靜態網站產生器 + 自定義 LiveForCode 主題。</li>
+</ul>
+<hr>
+<h2 id="🎨-特色功能與客製化細節"><a href="#🎨-特色功能與客製化細節" class="headerlink" title="🎨 特色功能與客製化細節"></a>🎨 特色功能與客製化細節</h2><h3 id="1-本地化音樂體驗-APlayer-Local"><a href="#1-本地化音樂體驗-APlayer-Local" class="headerlink" title="1. 本地化音樂體驗 (APlayer Local)"></a>1. 本地化音樂體驗 (APlayer Local)</h3><ul>
+<li><strong>存放路徑</strong>: <code>/source/music/</code> 下設有 <code>song</code>, <code>cover</code>, <code>lrc</code> 子目錄。</li>
+<li><strong>實現方式</strong>: 放棄第三方 API，改用本地靜態資源加載，確保音樂播放的穩定性。</li>
+</ul>
+<h3 id="2-進階作品集展示-Portfolio-Page"><a href="#2-進階作品集展示-Portfolio-Page" class="headerlink" title="2. 進階作品集展示 (Portfolio Page)"></a>2. 進階作品集展示 (Portfolio Page)</h3><ul>
+<li><strong>動態樣式</strong>: 採用 Grid 佈局與自定義 CSS 效果。</li>
+<li><strong>色彩優化</strong>: 標題支援深&#x2F;淺色模式自動變色（深色模式：白色，淺色模式：深灰色 #333）。</li>
+<li><strong>交互設計</strong>:<ul>
+<li>卡片懸停動畫（Hover effect）。</li>
+<li>作品連結強制使用 <code>target=&quot;_blank&quot;</code> 以新分頁開啟。</li>
+<li>特殊設計：標題添加文字外框（Text-stroke）與陰影，提升視覺清晰度。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-文章閱讀體驗優化"><a href="#3-文章閱讀體驗優化" class="headerlink" title="3. 文章閱讀體驗優化"></a>3. 文章閱讀體驗優化</h3><ul>
+<li><strong>字數統計</strong>: 整合 <code>hexo-wordcount</code> 外掛。</li>
+<li>[cite_start]<strong>元數據顯示</strong>: 文章標題下方及首頁列表顯示「文章長度」與「預計閱讀時間」。 [cite: 23]</li>
+<li><strong>Icon 系統</strong>: 統一採用 FontAwesome 6.5.1 圖標，風格簡約統一。</li>
+<li><strong>目錄導航</strong>: 整合 Tocbot，支援捲動自動高亮及平滑捲動。</li>
+</ul>
+<h3 id="4-品牌視覺與特效"><a href="#4-品牌視覺與特效" class="headerlink" title="4. 品牌視覺與特效"></a>4. 品牌視覺與特效</h3><ul>
+<li><strong>統一配色</strong>: 全站強調色採用品牌橘色 <code>#fe9600</code>。</li>
+<li><strong>動態背景</strong>: 支援 HomeHeader 粒線動效及 Ribbon 背景緞帶特效。</li>
+<li><strong>404 頁面</strong>: 自定義 <code>icon-swimming</code> 游泳圖標與「PAGE NOT FOUND」導覽。</li>
+</ul>
+<hr>
+<h2 id="📁-主要目錄結構"><a href="#📁-主要目錄結構" class="headerlink" title="📁 主要目錄結構"></a>📁 主要目錄結構</h2><pre><code class="language-text">.
+├── source/
+│   ├── _posts/         # 原創文章
+│   ├── portfolio/      # 作品集 index.md 與自定義樣式
+│   ├── archives/       # 歸檔頁面設定檔
+│   ├── image/          # 站點圖片資源 (頭像、Logo等)
+│   └── music/          # 本地音樂、封面、歌詞檔
+├── themes/LiveForCode/
+│   ├── layout/         # 佈局文件 (container, post, footer等)
+│   └── _config.yml     # 主題核心配置檔
+└── _config.yml         # Hexo 全域配置檔
+</code></pre>
+<hr>
+<h2 id="🔗-聯絡與社群"><a href="#🔗-聯絡與社群" class="headerlink" title="🔗 聯絡與社群"></a>🔗 聯絡與社群</h2><ul>
+<li><p><strong>GitHub</strong>: <a href="https://github.com/casperlin100w">casperlin100w</a></p>
+</li>
+<li><p><strong>Instagram</strong>: <a href="https://www.instagram.com/llf._.meow/">llf._.meow</a></p>
+</li>
+<li><p><strong>Telegram</strong>: <a href="https://t.me/luofanlin">@luofanlin</a></p>
+</li>
+<li><p><strong>Discord</strong>: <a href="https://discord.gg/AHyeFY7v4n">點我加入</a></p>
+</li>
+</ul>
+<p>© 2026 FanFan 版權所有 All Rights Reserved.</p>
+<p>部分內容使用 Gemini 協作及編撰</p>
