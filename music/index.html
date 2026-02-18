@@ -56,10 +56,6 @@
                     
                     
 <div class="music-page-container">
-    <div class="music-header">
-        <p>🎵 歌詞同步中...</p>
-    </div>
-
     <div id="player-local"></div>
 </div>
 
@@ -68,20 +64,14 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        const musicName = '幸福在歌唱';
         const ap = new APlayer({
             container: document.getElementById('player-local'),
             fixed: false,
             autoplay: true,
             theme: '#ad7a86',
-            loop: 'all',
-            order: 'list',
-            listFolded: false,
-            listMaxHeight: '500px',
-            // --- 關鍵設定：開啟歌詞 ---
-            lrcType: 3, 
-            // -----------------------
-            audio: [
-                {
+            lrcType: 0,
+            audio: [{
                  name: "Endless Tears",
                  artist: "CLIFF EDGE",
                  cover: "/music/cover/Endless Tears.jpg",
@@ -122,46 +112,84 @@
                 cover: "/music/cover/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.jpg",
                 url: "/music/song/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.mp3",
                 lrc: "/music/lrc/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.lrc",
-                }
-            ]
+                }]
         });
+
+        // 檢查歌詞是否載入成功
+        ap.on('canplay', function () {
+            console.log('音樂準備就緒');
+            document.getElementById('lrc-status').innerText = '🎵 歌詞同步播放中';
+        });
+
+        ap.on('lrcshow', function () {
+            console.log('歌詞面板已開啟');
+        });
+        
+        // 強制開啟歌詞模式
+        ap.lrc.show();
     });
 </script>
 
 <style>
-    /* 讓歌詞顯示得更漂亮 */
+    /* 1. 全域容器調整：取消溢出隱藏，讓歌詞有空間排下去 */
+    #player-local {
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        border-radius: 10px;
+        overflow: visible !important; /* 關鍵：允許內容流出 */
+    }
+
+    /* 2. 強制解除歌詞的絕對定位，讓它像一般文字一樣排在播放器下面 */
+    .aplayer.aplayer-withlrc .aplayer-lrc {
+        position: static !important; /* 解除浮動狀態 */
+        display: block !important;
+        height: 120px !important;    /* 增加高度，顯示更多行歌詞 */
+        width: 100% !important;
+        margin: 15px 0 !important;
+        background: rgba(0, 0, 0, 0.3) !important;
+        border-radius: 10px;
+        padding: 15px 0;
+        overflow: hidden;
+    }
+
+    /* 3. 移除蓋在控制列上的灰色半透明遮罩 */
+    .aplayer .aplayer-lrc:before,
+    .aplayer .aplayer-lrc:after {
+        display: none !important;
+    }
+
+    /* 4. 歌詞文字樣式微調 */
     .aplayer-lrc p {
+        color: #bbb !important;
         font-size: 16px !important;
-        font-family: "Noto Sans SC", sans-serif !important;
-        color: #666 !important;
-        line-height: 20px !important;
+        line-height: 28px !important;
+        height: 28px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
-    .aplayer-lrc-current {
-        color: #ad7a86 !important; /* 當前歌詞顏色 */
-        font-weight: bold;
+
+    /* 5. 當前播放歌詞高亮 */
+    .aplayer-lrc p.aplayer-lrc-current {
+        color: #ad7a86 !important; /* 你的主題粉紫色 */
+        font-size: 19px !important;
+        font-weight: bold !important;
     }
-    
-    .music-page-container {
-        padding: 30px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        margin-top: 20px;
+
+    /* 6. 修正播放清單位置，確保它在歌詞下方 */
+    .aplayer .aplayer-list {
+        margin-top: 10px !important;
+        border-top: 1px solid rgba(255,255,255,0.1);
     }
-    .music-header { text-align: center; margin-bottom: 40px; }
-    .music-title-font { font-family: "Playball", cursive; font-size: 3.5em; color: #ad7a86; }
-    #player-local { max-width: 800px; margin: 0 auto; box-shadow: 0 15px 40px rgba(0,0,0,0.4); border-radius: 10px;}
+
+    /* 隱藏主題自帶的標題 */
     .article-header { display: none !important; }
+    .music-page-container { padding: 30px; }
 </style>
                     
                 </div>
-                
-    <div class="article-comments">
-        
-        <div class="comments-content"></div>
-    </div>
-    
- 
+                 
             </div>
         
     
