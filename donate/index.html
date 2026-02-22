@@ -35,7 +35,14 @@
     <link type="text/css" rel="stylesheet" href="/css/page.css">
 <div id="header" class="header">
     <div class="vertical">
+        <div class="lang-switch-top-right">
+            
+            <a href="/donate/" class="lang-link ">繁中</a>
+            <span class="lang-divider">|</span>
+            <a href="/en/donate/" class="lang-link ">EN</a>
+        </div>
         <div class="inner">
+
             
                 <h1 class="header-subtitle">贊 助</h1>
                 <div class="header-subinfo">
@@ -43,10 +50,72 @@
                     <p class="article-info-text English"></p>                  
                 </div>
             
+
+
+            <style>
+            /* 1. 語言切換：固定在 Header 的右上方 */
+            .lang-switch-top-right {
+                position: absolute !important; 
+                top: 15px !important; 
+                right: 25px !important;    /* 靠右對齊 */
+                display: flex !important; [cite: 20]
+                align-items: center; [cite: 20]
+                gap: 8px;
+                z-index: 1000; 
+                pointer-events: auto; 
+            }
+
+            /* 2. 開關頁面特效 (#animationSwitch)：固定在「螢幕視窗」的右下方 */
+            #animationSwitch {
+                position: fixed !important; /* 改為 fixed，這會讓它固定在瀏覽器右下角，無視 Header 大小 */
+                top: auto !important;      
+                bottom: 20px !important;    /* 距離螢幕底部 20px */
+                right: 20px !important;     /* 距離螢幕右側 20px */
+                z-index: 9999 !important;   /* 確保不會被任何內容擋住 */
+                font-size: 14px;
+                color: #F9F9F9;
+                cursor: pointer;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* 強化文字陰影 */
+            }
+
+            /* 語言連結樣式 (維持原樣) */
+            .lang-link {
+                color: rgba(255, 255, 255, 0.8) !important; [cite: 23]
+                font-size: 13px; [cite: 23]
+                text-decoration: none;
+                transition: all 0.3s ease; [cite: 24]
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); [cite: 25]
+            }
+
+            .lang-link.active {
+                color: #fff !important; [cite: 26]
+                font-weight: bold; [cite: 26]
+                border-bottom: 2px solid #fff; [cite: 27]
+            }
+
+            .lang-divider {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+            /* 行動裝置優化 */
+            @media screen and (max-width: 768px) {
+                .lang-switch-top-right {
+                    top: 10px !important; [cite: 22]
+                    right: 15px !important;
+                }
+                #animationSwitch {
+                    bottom: 15px !important;
+                    right: 15px !important;
+                    font-size: 12px;
+                }
+            }
+            </style>
         </div>
     </div>
     
 </div>
+
+
 <div id="container">
     
         <!-- 独立页面 -->
@@ -58,7 +127,7 @@
 <p>覺得我很帥嗎？要不要施捨我這可憐人一點點🥺🥺</p>
 </blockquote>
 <blockquote>
-<p>合作請洽：<a href="mailto:&#99;&#97;&#112;&#113;&#113;&#x38;&#x32;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">capqq82@gmail.com</a><br>Telegram：<a target="_blank" rel="noopener" href="https://t.me/luofanlin">@luofanlin</a></p>
+<p>合作請洽：<a href="mailto:&#99;&#x61;&#112;&#x71;&#x71;&#56;&#x32;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">capqq82@gmail.com</a><br>Telegram：<a target="_blank" rel="noopener" href="https://t.me/luofanlin">@luofanlin</a></p>
 </blockquote>
 
                     
@@ -68,8 +137,13 @@
         
     
 </div>
-    <div id="footer">
-    <div><span class='face'>ღゝ◡╹)ノ♡</span></div><div>【如果有遠方<span><i class='iconfont icon-like-fill'></i></span>你就是方向】</div><div>&copy; 2026-2026 FanFan. All Rights Reserved.</div>
+    
+
+<div id="footer">
+    
+        <div><span class='face'>ღゝ◡╹)ノ♡</span></div><div>【如果有遠方<span><i class='iconfont icon-like-fill'></i></span>你就是方向】</div><div>&copy; 2026-2026 FanFan. All Rights Reserved.</div>
+    
+    
     <div class="runtime-info" style="margin-top: 10px; font-size: 13px; color: #888;">
         <span id="runtime_span"></span>
     </div>
@@ -99,7 +173,9 @@
         // 更新到網頁上
         var element = document.getElementById("runtime_span");
         if (element) {
-            element.innerHTML = "本站運行 " + days + " 天 " + hours + " 小時 " + minutes + " 分 " + seconds + " 秒";
+            
+                element.innerHTML = "本站運行 " + days + " 天 " + hours + " 小時 " + minutes + " 分 " + seconds + " 秒";
+            
         }
     }
     // 確保頁面載入後開始執行
@@ -116,6 +192,8 @@
             </div>
         
         <nav class="menu">
+            
+
             <div class="menu-introduce"> 
                 <div class="introduce-avatar">
                     <img src="/image/sidebar/avatar.jpg">
@@ -123,58 +201,82 @@
                 <div class="introduce-info"> 
                     <div class="introduce-user">
                         
-                            <a href="https://casperlin100w.github.io/" target="_blank"><span>FanFan 凡凡</span></a>
+                            
+                            <a href="/" target="_self"><span>FanFan 凡凡</span></a>
                         
                     </div>
                 </div> 
             </div> 
+
             <div class="menu-list">
                 <ul>
                     
                         <li class="">
+                            
                             <a href="/" class="" target="_self">
-                                <i class="fa-solid fa-house"></i>  首頁
+                                <i class="fa-solid fa-house"></i> 
+                                
+                                 首頁
                             </a>
                         </li>
                     
                         <li class="">
+                            
                             <a href="/archives" class="" target="_self">
-                                <i class="fa-solid fa-archive"></i>  歸檔
+                                <i class="fa-solid fa-archive"></i> 
+                                
+                                 歸檔
                             </a>
                         </li>
                     
                         <li class="">
+                            
                             <a href="/about" class="" target="_self">
-                                <i class="fa-solid fa-user"></i>  關於
+                                <i class="fa-solid fa-user"></i> 
+                                
+                                 關於
                             </a>
                         </li>
                     
                         <li class="">
+                            
                             <a href="/friend" class="" target="_self">
-                                <i class="fa-solid fa-user-group"></i>  朋友列表
+                                <i class="fa-solid fa-user-group"></i> 
+                                
+                                 朋友列表
                             </a>
                         </li>
                     
                         <li class="">
+                            
                             <a href="/portfolio" class="" target="_self">
-                                <i class="fa-solid fa-briefcase"></i>  作品集
+                                <i class="fa-solid fa-briefcase"></i> 
+                                
+                                 作品集
                             </a>
                         </li>
                     
                         <li class="">
+                            
                             <a href="/category" class="" target="_self">
-                                <i class="fa-solid fa-folder-tree"></i>  分類
+                                <i class="fa-solid fa-folder-tree"></i> 
+                                
+                                 分類
                             </a>
                         </li>
                     
                         <li class="">
+                            
                             <a href="/tag" class="" target="_self">
-                                <i class="fa-solid fa-tags"></i>  標籤
+                                <i class="fa-solid fa-tags"></i> 
+                                
+                                 標籤
                             </a>
                         </li>
                     
-                </ul> 
-            </div> 
+                </ul>
+            </div>
+
             <div class="menu-link">
                 <div class="box">
                     <div class="image-box"></div>
@@ -201,7 +303,9 @@
                     </a>
                 
             </div> 
+
             <div class="sidebar-music-wrapper">
+                
                 <a href="/music" title="進入凡凡的音樂空間">
                     <div class="vinyl-record">
                         <i class="fa-solid fa-headphones"></i>
@@ -210,47 +314,46 @@
             </div>
 
             <style>
-            .sidebar-music-wrapper {
-                margin: 15px auto; /* 調整位置，與上方社群連結保持適當距離 */
-                text-align: center;
-                display: flex;
-                justify-content: center;
-            }
+                .sidebar-music-wrapper {
+                    margin: 15px auto;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                }
 
-            .vinyl-record {
-                width: 60px;
-                height: 60px;
-                background: #1a1a1a; /* 深黑色盤面 */
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 3px solid #333; /* 模擬唱片外框 */
-                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-                transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-                position: relative;
-            }
+                .vinyl-record {
+                    width: 60px;
+                    height: 60px;
+                    background: #1a1a1a; 
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 3px solid #333; 
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                    position: relative;
+                }
 
-            /* 模擬黑膠唱片的紋路感 */
-            .vinyl-record::after {
-                content: '';
-                position: absolute;
-                width: 80%;
-                height: 80%;
-                border: 1px solid rgba(255, 255, 255, 0.05);
-                border-radius: 50%;
-            }
+                .vinyl-record::after {
+                    content: '';
+                    position: absolute;
+                    width: 80%;
+                    height: 80%;
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    border-radius: 50%;
+                }
 
-            .vinyl-record i {
-                font-size: 28px !important;
-                color: #ad7a86; /* 你的主題粉紫色 */
-            }
+                .vinyl-record i {
+                    font-size: 28px !important;
+                    color: #ad7a86; 
+                }
 
-            .vinyl-record:hover {
-                transform: rotate(360deg); /* 懸停時旋轉 */
-                border-color: #ad7a86;
-                box-shadow: 0 0 20px rgba(173, 122, 134, 0.6);
-            }
+                .vinyl-record:hover {
+                    transform: rotate(360deg); 
+                    border-color: #ad7a86;
+                    box-shadow: 0 0 20px rgba(173, 122, 134, 0.6);
+                }
             </style>
         </nav>
         <button class="menu-button-close"></button>
@@ -423,7 +526,8 @@
 </div>
     <div class="loading"></div>
 </div>
-    <script>
+    
+<script>
     window.config = {
         GitHubUserName     : "casperlin100w",
         GitHubRepositories : "Hexo-LiveForCode",

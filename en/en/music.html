@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <meta name="referrer" content="origin">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>
+        
+            Music Box
+        
+    </title>
+    <link rel="shortcut icon" href="#"/>
+
+    <link type="text/css" rel="stylesheet" href="/font/LongCang.css">
+    <link type="text/css" rel="stylesheet" href="/font/Monda.css">
+    <link type="text/css" rel="stylesheet" href="/font/NotoSansSC.css">
+    <link type="text/css" rel="stylesheet" href="/font/NotoSerifSC.css">
+    <link type="text/css" rel="stylesheet" href="/font/Playball.css">
+    <link type="text/css" rel="stylesheet" href="/font/PTMono.css">
+    <link type="text/css" rel="stylesheet" href="/font/Roboto.css">
+    <link type="text/css" rel="stylesheet" href="/font/RobotoSlab.css">
+    <link type="text/css" rel="stylesheet" href="/font/Rosario.css">
+    <link type="text/css" rel="stylesheet" href="/font/UbuntuMono.css">
+
+    <link type="text/css" rel="stylesheet" href="/css/base.css">
+    <link type="text/css" rel="stylesheet" href="/css/code.css">
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <a id="cover"></a>
+    <link type="text/css" rel="stylesheet" href="/css/page.css">
+<div id="header" class="header">
+    <div class="vertical">
+        <div class="lang-switch-top-right">
+            
+            <a href="/music" class="lang-link ">繁中</a>
+            <span class="lang-divider">|</span>
+            <a href="/en/music" class="lang-link ">EN</a>
+        </div>
+        <div class="inner">
+
+            
+                <h1 class="header-subtitle">Music Box</h1>
+                <div class="header-subinfo">
+                    <p class="article-info-text Chinese"></p>
+                    <p class="article-info-text English"></p>                  
+                </div>
+            
+
+
+            <style>
+            /* 1. 語言切換：固定在 Header 的右上方 */
+            .lang-switch-top-right {
+                position: absolute !important; 
+                top: 15px !important; 
+                right: 25px !important;    /* 靠右對齊 */
+                display: flex !important; [cite: 20]
+                align-items: center; [cite: 20]
+                gap: 8px;
+                z-index: 1000; 
+                pointer-events: auto; 
+            }
+
+            /* 2. 開關頁面特效 (#animationSwitch)：固定在「螢幕視窗」的右下方 */
+            #animationSwitch {
+                position: fixed !important; /* 改為 fixed，這會讓它固定在瀏覽器右下角，無視 Header 大小 */
+                top: auto !important;      
+                bottom: 20px !important;    /* 距離螢幕底部 20px */
+                right: 20px !important;     /* 距離螢幕右側 20px */
+                z-index: 9999 !important;   /* 確保不會被任何內容擋住 */
+                font-size: 14px;
+                color: #F9F9F9;
+                cursor: pointer;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* 強化文字陰影 */
+            }
+
+            /* 語言連結樣式 (維持原樣) */
+            .lang-link {
+                color: rgba(255, 255, 255, 0.8) !important; [cite: 23]
+                font-size: 13px; [cite: 23]
+                text-decoration: none;
+                transition: all 0.3s ease; [cite: 24]
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); [cite: 25]
+            }
+
+            .lang-link.active {
+                color: #fff !important; [cite: 26]
+                font-weight: bold; [cite: 26]
+                border-bottom: 2px solid #fff; [cite: 27]
+            }
+
+            .lang-divider {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+            /* 行動裝置優化 */
+            @media screen and (max-width: 768px) {
+                .lang-switch-top-right {
+                    top: 10px !important; [cite: 22]
+                    right: 15px !important;
+                }
+                #animationSwitch {
+                    bottom: 15px !important;
+                    right: 15px !important;
+                    font-size: 12px;
+                }
+            }
+            </style>
+        </div>
+    </div>
+    
+</div>
+
+
+<div id="container">
+    
+        <!-- 独立页面 -->
+        
+            <div id="article">
+                <div class="article-body">
+                    
+                    
+<div class="music-page-container">
+    <div id="player-local"></div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const musicName = 'Happiness Is Singing';
+        const ap = new APlayer({
+            container: document.getElementById('player-local'),
+            fixed: false,
+            autoplay: true,
+            theme: '#ad7a86',
+            lrcType: 0,
+            audio: [{
+                 name: "Endless Tears",
+                 artist: "CLIFF EDGE",
+                 cover: "/music/cover/Endless Tears.jpg",
+                 url: "/music/song/Endless Tears.mp3",
+                 lrc: "/music/lrc/Endless Tears.lrc",
+                },
+                {
+                name: "Happiness Is Singing",
+                artist: "A-Lin",
+                cover: "/music/cover/幸福在歌唱-A-Lin.jpg",
+                url: "/music/song/幸福在歌唱-A-Lin.mp3",
+                lrc: "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                },
+                {
+                name: "The Song of Laughter and Forgetting",
+                artist: "Mayday",
+                cover: "/music/cover/笑忘歌-五月天.jpg",
+                url: "/music/song/笑忘歌-五月天.mp3",
+                lrc: "/music/lrc/笑忘歌-五月天.lrc",
+                },
+                {
+                name: "The Most Important Trifles",
+                artist: "Mayday",
+                cover: "/music/cover/最重要的小事-五月天.jpg",
+                url: "/music/song/最重要的小事-五月天.mp3",
+                lrc: "/music/lrc/最重要的小事-五月天.lrc",
+                },
+                {
+                name: "Die For You",
+                artist: "Grabbitz, VALORANT",
+                cover: "/music/cover/Die For You-Grabbitz,VALORANT.jpg",
+                url: "/music/song/Die For You-Grabbitz,VALORANT.mp3",
+                lrc: "/music/lrc/Die For You-Grabbitz,VALORANT.lrc",
+                },
+                {
+                name: "SUPERPOWER",
+                artist: "KISS OF LIFE, NATTY, Mark, Valorant",
+                cover: "/music/cover/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.jpg",
+                url: "/music/song/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.mp3",
+                lrc: "/music/lrc/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.lrc",
+                },{
+                name: "Bad Guy",
+                artist: "Billie Eilish",
+                cover: "/music/cover/Billie Eilish - Bad Guy.jpg",
+                url: "/music/song/Billie Eilish - Bad Guy.mp3",
+                lrc: "/music/lrc/Billie Eilish - Bad Guy.lrc",
+                }]
+        });
+
+        // Check if lyrics loaded successfully
+        ap.on('canplay', function () {
+            console.log('Music Ready');
+            document.getElementById('lrc-status').innerText = '🎵 Lyrics syncing...';
+        });
+
+        ap.on('lrcshow', function () {
+            console.log('Lyric panel opened');
+        });
+        
+        // Force Lyric mode on
+        ap.lrc.show();
+    });
+</script>
+
+<style>
+    /* 1. Global Container: Allow overflow so lyrics can flow downwards */
+    #player-local {
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        border-radius: 10px;
+        overflow: visible !important; /* Critical: allows content to flow out */
+    }
+
+    /* 2. Force lyric position to static so it sits below the player like normal text */
+    .aplayer.aplayer-withlrc .aplayer-lrc {
+        position: static !important; /* Remove floating state */
+        display: block !important;
+        height: 120px !important;    /* Increased height to show more lines */
+        width: 100% !important;
+        margin: 15px 0 !important;
+        background: rgba(0, 0, 0, 0.3) !important;
+        border-radius: 10px;
+        padding: 15px 0;
+        overflow: hidden;
+    }
+
+    /* 3. Remove the semi-transparent mask over the control bar */
+    .aplayer .aplayer-lrc:before,
+    .aplayer .aplayer-lrc:after {
+        display: none !important;
+    }
+
+    /* 4. Lyric text style adjustments */
+    .aplayer-lrc p {
+        color: #bbb !important;
+        font-size: 16px !important;
+        line-height: 28px !important;
+        height: 28px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    /* 5. Highlight current playing line */
+    .aplayer-lrc p.aplayer-lrc-current {
+        color: #ad7a86 !important; /* Theme pinkish-purple */
+        font-size: 19px !important;
+        font-weight: bold !important;
+    }
+
+    /* 6. Fix playlist position to ensure it stays below the lyrics */
+    .aplayer .aplayer-list {
+        margin-top: 10px !important;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Hide the default theme header */
+    .article-header { display: none !important; }
+    .music-page-container { padding: 30px; }
+</style>
+                    
+                </div>
+                 
+            </div>
+        
+    
+</div>
+    
+
+<div id="footer">
+    
+        <div><span class='face'>ღゝ◡╹)ノ♡</span></div>
+        <div>【If there is a destination<span><i class='iconfont icon-like-fill'></i></span>You are my direction】</div>
+        <div>&copy; 2026-2026 FanFan. All Rights Reserved.</div>
+    
+    
+    <div class="runtime-info" style="margin-top: 10px; font-size: 13px; color: #888;">
+        <span id="runtime_span"></span>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function show_runtime() {
+        // 每秒執行一次 
+        setTimeout(show_runtime, 1000);
+        
+        // 抓取 _config.yml 中的 WebsiteStartDate
+        var start_time = new Date("2026-02-12"); 
+        var now_time = new Date();
+        var duration = now_time.getTime() - start_time.getTime();
+        
+        // 計算各單位時間
+        var days = Math.floor(duration / (24 * 3600 * 1000));
+        var hours = Math.floor((duration % (24 * 3600 * 1000)) / (3600 * 1000));
+        var minutes = Math.floor((duration % (3600 * 1000)) / (60 * 1000));
+        var seconds = Math.floor((duration % (60 * 1000)) / 1000);
+        
+        // 修正邏輯：如果計算結果為負數（日期設定在未來），則全部顯示為 0
+        if (duration < 0) {
+            days = 0; hours = 0; minutes = 0; seconds = 0;
+        }
+
+        // 更新到網頁上
+        var element = document.getElementById("runtime_span");
+        if (element) {
+            
+                element.innerHTML = "Running for " + days + " days " + hours + " hrs " + minutes + " mins " + seconds + " secs";
+            
+        }
+    }
+    // 確保頁面載入後開始執行
+    show_runtime();
+</script>
+    <div id="sidebar">
+    <div class="menu-wrap" style="display:none;">
+        
+            <div class="menu-notice">
+                <span class="iconfont icon-notice"></span>
+                <div class="notice">
+                    <span>Everything Will Be Alright, Tomorrow Will Be Fine.</span>
+                </div>
+            </div>
+        
+        <nav class="menu">
+            
+
+            <div class="menu-introduce"> 
+                <div class="introduce-avatar">
+                    <img src="/image/sidebar/avatar.jpg">
+                </div> 
+                <div class="introduce-info"> 
+                    <div class="introduce-user">
+                        
+                            
+                            <a href="/en/" target="_self"><span>FanFan 凡凡</span></a>
+                        
+                    </div>
+                </div> 
+            </div> 
+
+            <div class="menu-list">
+                <ul>
+                    
+                        <li class="">
+                            
+                            <a href="/en/" class="" target="_self">
+                                <i class="fa-solid fa-house"></i> 
+                                
+                                 Home
+                            </a>
+                        </li>
+                    
+                        <li class="">
+                            
+                            <a href="/en/archives" class="" target="_self">
+                                <i class="fa-solid fa-archive"></i> 
+                                
+                                 Archives
+                            </a>
+                        </li>
+                    
+                        <li class="">
+                            
+                            <a href="/en/about" class="" target="_self">
+                                <i class="fa-solid fa-user"></i> 
+                                
+                                 About
+                            </a>
+                        </li>
+                    
+                        <li class="">
+                            
+                            <a href="/en/friend" class="" target="_self">
+                                <i class="fa-solid fa-user-group"></i> 
+                                
+                                 Friends
+                            </a>
+                        </li>
+                    
+                        <li class="">
+                            
+                            <a href="/en/portfolio" class="" target="_self">
+                                <i class="fa-solid fa-briefcase"></i> 
+                                
+                                 Portfolio
+                            </a>
+                        </li>
+                    
+                        <li class="">
+                            
+                            <a href="/en/category" class="" target="_self">
+                                <i class="fa-solid fa-folder-tree"></i> 
+                                
+                                 Categories
+                            </a>
+                        </li>
+                    
+                        <li class="">
+                            
+                            <a href="/en/tag" class="" target="_self">
+                                <i class="fa-solid fa-tags"></i> 
+                                
+                                 Tags
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            <div class="menu-link">
+                <div class="box">
+                    <div class="image-box"></div>
+                </div>
+                
+                    <a name="Instagram" href="https://www.instagram.com/llf._.meow/" class="" target="_blank" data="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                
+                    <a name="GitHub" href="https://github.com/casperlin100w" class="" target="_blank" data="">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                
+                    <a name="Telegram" href="https://t.me/luofanlin" class="" target="_blank" data="">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                
+                    <a name="Discord" href="https://discord.gg/AHyeFY7v4n" class="" target="_blank" data="">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                
+                    <a name="More Link" href="/link" class="" target="_blank" data="">
+                        <i class="fa-solid fa-link"></i>
+                    </a>
+                
+            </div> 
+
+            <div class="sidebar-music-wrapper">
+                
+                <a href="/en/music" title="進入凡凡的音樂空間">
+                    <div class="vinyl-record">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                </a>
+            </div>
+
+            <style>
+                .sidebar-music-wrapper {
+                    margin: 15px auto;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .vinyl-record {
+                    width: 60px;
+                    height: 60px;
+                    background: #1a1a1a; 
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 3px solid #333; 
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                    position: relative;
+                }
+
+                .vinyl-record::after {
+                    content: '';
+                    position: absolute;
+                    width: 80%;
+                    height: 80%;
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    border-radius: 50%;
+                }
+
+                .vinyl-record i {
+                    font-size: 28px !important;
+                    color: #ad7a86; 
+                }
+
+                .vinyl-record:hover {
+                    transform: rotate(360deg); 
+                    border-color: #ad7a86;
+                    box-shadow: 0 0 20px rgba(173, 122, 134, 0.6);
+                }
+            </style>
+        </nav>
+        <button class="menu-button-close"></button>
+        <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+                <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+            </svg>
+        </div>
+    </div>
+    <button class="menu-button-open">MENU</button>
+    <div class="menu-cover"></div>
+</div>
+    <link type="text/css" rel="stylesheet" href="/css/search.css">
+<script type="text/javascript" src="/js/iscroll.js"></script>
+<script type="text/javascript" src="/js/instantsearch.min.js"></script>
+<div class="search-window">
+    <div class="search-content">
+        <div class="search-content-icon">
+            <i class="iconfont icon-search"></i>
+        </div>
+        <div id="search-input" class="search-input"></div>
+    </div>
+
+    <div class="search-scroll">
+        <div class="search-result">
+            <div id="search-stats" class="search-stats"></div>
+            <div id="search-hits"></div>
+            <div id="search-pagination" class="search-pagination"></div>
+        </div>
+    </div>
+
+    <span class="search-close-icon">
+        <i class="iconfont icon-close"></i>
+    </span>
+</div>
+    <div id="tools">
+    <div class="progressbar-top"></div>
+    
+    <div class="aplayer"></div>
+    <link type="text/css" rel="stylesheet" href="/css/APlayer.css">
+    <script type="text/javascript" src="/js/APlayer.min.js"></script>
+    <script type="text/javascript">
+        const aplayer = new APlayer({
+            container: document.querySelector(".aplayer"),
+            fixed: true,
+            autoplay: false,
+            loop: "all",
+            order: "random",
+            preload: "auto",
+            volume: 0.67,
+            mutex: true,
+            lrcType: 3,
+            audio: [
+                
+                    {
+                        name: "Endless Tears",
+                        artist: "CLIFF EDGE",
+                        cover: "/music/cover/Endless Tears.jpg",
+                        url: "/music/song/Endless Tears.mp3",
+                        lrc: "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name: "幸福在歌唱",
+                        artist: "A-Lin",
+                        cover: "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url: "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc: "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                    },
+                
+                    {
+                        name: "笑忘歌",
+                        artist: "五月天",
+                        cover: "/music/cover/笑忘歌-五月天.jpg",
+                        url: "/music/song/笑忘歌-五月天.mp3",
+                        lrc: "/music/lrc/笑忘歌-五月天.lrc"
+                    },
+                
+                    {
+                        name: "最重要的小事",
+                        artist: "五月天",
+                        cover: "/music/cover/最重要的小事-五月天.jpg",
+                        url: "/music/song/最重要的小事-五月天.mp3",
+                        lrc: "/music/lrc/最重要的小事-五月天.lrc"
+                    },
+                
+                    {
+                        name: "Die For You",
+                        artist: "Grabbitz,VALORANT",
+                        cover: "/music/cover/Die For You-Grabbitz,VALORANT.jpg",
+                        url: "/music/song/Die For You-Grabbitz,VALORANT.mp3",
+                        lrc: "/music/lrc/Die For You-Grabbitz,VALORANT.lrc"
+                    },
+                
+                    {
+                        name: "SUPERPOWER",
+                        artist: "KISS OF LIFE,NATTY,Mark,Valorant",
+                        cover: "/music/cover/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.jpg",
+                        url: "/music/song/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.mp3",
+                        lrc: "/music/lrc/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.lrc"
+                    },
+                
+                    {
+                        name: "Bad Guy",
+                        artist: "Billie Eilish",
+                        cover: "/music/cover/Billie Eilish - Bad Guy.jpg",
+                        url: "/music/song/Billie Eilish - Bad Guy.mp3",
+                        lrc: "/music/lrc/Billie Eilish - Bad Guy.lrc"
+                    },
+                
+            ]
+        });
+    </script>
+
+    <div class="wrap-right">
+    <div class="wrap-right-hide">
+        <div class="wrap-right-button favorites">
+            <div class="iconbox" switch="false">
+                <span class="iconfont icon-favorites"></span>
+            </div>
+            <span class="icontext">追蹤</span>
+        </div>
+        <div class="wrap-right-button search">
+            <div class="iconbox">
+                <span class="iconfont icon-search-menu"></span>
+            </div>
+            <span class="icontext">搜尋</span>
+        </div>
+        <div class="wrap-right-button menu-button">
+            <div class="iconbox">
+                <span class="iconfont icon-menu"></span>
+            </div>
+            <span class="icontext">選單</span>
+        </div>
+        <div class="wrap-right-button mode">
+            <div class="light">
+                <div class="iconbox">
+                    <span class="iconfont icon-daymode"></span>
+                </div>
+                <span class="icontext">浅色模式</span>
+            </div>
+            <div class="dark">
+                <div class="iconbox">
+                    <span class="iconfont icon-nightmode-fill"></span>
+                </div>
+                <span class="icontext">深色模式</span>
+            </div>
+        </div>
+        <div class="wrap-right-button bottom">
+            <div class="iconbox">
+                <span class="iconfont icon-top"></span>
+            </div>
+            <span class="icontext">跳至底部</span>
+        </div>
+    </div>
+    <div class="wrap-right-show">
+        <div class="wrap-right-button set">
+            <div class="iconbox">
+                <span class="iconfont icon-setting"></span>
+            </div>
+            <span class="icontext">設定</span>
+        </div>
+        <div class="wrap-right-button top">
+            <div class="iconbox">
+                <span class="iconfont icon-top"></span>
+            </div>
+            <span class="icontext">返回頂部</span>
+        </div>
+    </div>
+</div>
+    <div class="loading"></div>
+</div>
+    
+<script>
+    window.config = {
+        GitHubUserName     : "casperlin100w",
+        GitHubRepositories : "Hexo-LiveForCode",
+
+        User             : "FanFan 凡凡",
+        UserAvatar       : "/image/sidebar/avatar.jpg",
+        WebsiteStartDate : "2026-02-12",
+        Home             : "https://casperlin100w.github.io/",
+
+        WebsiteTitleBlur         : "(◍´꒳`◍) FanFan在等你",
+        WebsiteTitleBlurTimeOut  : 500,
+        WebsiteTitleFocus        : "(*´∇｀*) 歡迎回來!",
+        WebsiteTitleFocusTimeOut : 1000,
+        WebsiteFavicon           : {
+            light : "/image/website/logo/logo.png",
+            dark  : "/image/website/logo/logo-dark.png"
+        },
+
+        ProgressBar : {
+            id       : "topProgressBar",
+            color    : "#77B6FF",
+            height   : "2px",
+            duration : 0.2
+        },
+
+        Loading: {
+            rebound : {
+                tension  : 16,
+                friction : 5
+            },
+            spinner : {
+                id     : "spinner",
+                radius : 90,
+                sides  : 3,
+                depth  : 4,
+                colors : {
+                    background : "#F0F0F0",
+                    stroke     : "#272633",
+                    base       : "",
+                    child      : "#272633"
+                },
+                alwaysForward : true,
+                restAt        : 0.5,
+                renderBase    : false
+            }
+        },
+
+        HomeHeaderAnimationRendered : true,
+        HomeHeaderAnimation         : {
+            radius      : 15,
+            density     : 0.2,
+            color       : "rgba(255, 255, 255, .2)",
+            clearOffset : 0.3
+        },
+
+        BackAnimationRendered          : true,
+        IEBrowserBackAnimationRendered : false,
+        BackAnimation                  : {
+            colorSaturation  : "60%",
+            colorBrightness  : "50%",
+            colorAlpha       : 0.5,
+            colorCycleSpeed  : 5,
+            verticalPosition : "random",
+            horizontalSpeed  : 200,
+            ribbonCount      : 3,
+            strokeSize       : 0,
+            parallaxAmount   : -0.2,
+            animateSections  : true
+        },
+
+        HomeHeaderImage : [
+            
+                "/image/header/home.jpg",
+            
+                "/image/header/home.jpeg",
+            
+        ],
+        HomeBannerText  : "Fate will keep us connected, no matter the distance.",
+
+        ArticleHeaderImage : [
+            
+                "/image/header/article.jpg",
+            
+        ],
+
+        OtherBannerText : "When the world is left with solitude, I become my own faith.",
+
+        Error : {
+            icon    : "icon-swimming",
+            title   : "PAGE NOT FOUND",
+            content : [
+                
+                    "很抱歉，您訪問的頁面不存在！",
+                
+                    "請確認網址是否有誤或是此頁面已被移除。",
+                
+            ],
+            buttons : [
+                
+                    {
+                        icon  : "icon-home",
+                        text  : "返回首頁",
+                        href  : "/",
+                        class : ""
+                    },
+                
+            ]
+        },
+
+        MenuNotice : {
+            enable : true,
+            notice : "Everything Will Be Alright, Tomorrow Will Be Fine.",
+            speed  : 30
+        },
+        MenuList : [
+            
+                {
+                    name   : " 首頁",
+                    icon   : "fa-solid fa-house",
+                    href   : "/",
+                    type   : "index",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 歸檔",
+                    icon   : "fa-solid fa-archive",
+                    href   : "/archives",
+                    type   : "archive",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 關於",
+                    icon   : "fa-solid fa-user",
+                    href   : "/about",
+                    type   : "about",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 朋友列表",
+                    icon   : "fa-solid fa-user-group",
+                    href   : "/friend",
+                    type   : "friend",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 作品集",
+                    icon   : "fa-solid fa-briefcase",
+                    href   : "/portfolio",
+                    type   : "portfolio",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 分類",
+                    icon   : "fa-solid fa-folder-tree",
+                    href   : "/category",
+                    type   : "category",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : " 標籤",
+                    icon   : "fa-solid fa-tags",
+                    href   : "/tag",
+                    type   : "tag",
+                    class  : "",
+                    target : "_self"
+                },
+            
+        ],
+        MenuLink : [
+            
+                
+                    {
+                        name   : "Instagram",
+                        icon   : "fa-brands fa-instagram",
+                        href   : "https://www.instagram.com/llf._.meow/",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+                    {
+                        name   : "GitHub",
+                        icon   : "fa-brands fa-github",
+                        href   : "https://github.com/casperlin100w",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+                    {
+                        name   : "Telegram",
+                        icon   : "fa-brands fa-telegram",
+                        href   : "https://t.me/luofanlin",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+                    {
+                        name   : "Discord",
+                        icon   : "fa-brands fa-discord",
+                        href   : "https://discord.gg/AHyeFY7v4n",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+                    {
+                        name   : "More Link",
+                        icon   : "fa-solid fa-link",
+                        href   : "/link",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+            
+        ],
+
+        FooterStyle : 2,
+        BottomText  : "<div><span class='face'>ღゝ◡╹)ノ♡</span></div><div>【If there is a destination<span><i class='iconfont icon-like-fill'></i></span>You are my direction】</div><div>&copy; 2026-2026 FanFan. All Rights Reserved.</div>",
+
+        ConsoleList : [
+            
+                
+                    [
+                        
+                            
+                                "Based on cnblogs theme SimpleMemory.",
+                            
+                                "",
+                            
+                        
+                    ],
+                
+                    [
+                        
+                            
+                                "SimpleMemory Author:",
+                            
+                                "BNDong",
+                            
+                        
+                    ],
+                
+                    [
+                        
+                            
+                                "Theme:",
+                            
+                                "LiveForCode",
+                            
+                        
+                    ],
+                
+            
+        ],
+
+        FontIconExtend : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
+
+        Donate : {
+            paypal  : "",
+            bitcoin : "",
+            alipay  : "/image/donate/alipay.png",
+            wechat  : "/image/donate/wechat.png"
+        },
+
+        Search : {
+            applicationID : "010C3EANT8",
+            apiKey        : "c7abab9f11b79102b9aff7fe6d41447d",
+            indexName     : "Notes",
+            hits          : {
+                page : 10
+            },
+            labels        : {
+                placeholder : "搜尋",
+                empty       : "未發現與 「${query}」 相關的内容",
+                stats       : "找到 ${hits} 條相關內容，花費 ${time} 毫秒",
+            }
+        }, 
+
+        Comment : {
+            switch : true,
+            type   : "Valine",
+        },
+
+        Waline : {
+            el              : ".comments-content",
+            serverURL       : "",
+            path            : window.location.pathname,
+            meta            : "['暱稱', '電子郵件', '連結']",
+            requiredMeta    : "['暱稱', '電子郵件']",
+            pageSize        : 10,
+            lang            : "zh-tw",
+            locale: {
+                admin       : "博主",
+                anonymous   : "匿名用户",
+                sofa        : "快來搶第一個留言的人 ~",
+                placeholder : "這篇文章真的是太讚了！",
+            },
+            dark            : "html[color-scheme='dark']",
+            search          : false,
+            pageview        : true,
+            comment         : true,
+            copyright       : false,
+        },
+
+        Valine : {
+            el             : ".comments-content",
+            appId          : "srhKtvWPQTWYKh3qX8G8M7v0-gzGzoHsz",
+            appKey         : "8uVSP1q6UlALVC5igYfIfv2h",
+            serverURLs     : "",
+            placeholder    : "這篇文章真的是太讚了！...",
+            avatar         : "mm",
+            meta           : "暱稱,電子郵件,連結",
+            requiredFields : "暱稱,電子郵件",
+            pageSize       : 5,
+            lang           : "zh-tw",
+            visitor        : true,
+            enableQQ       : true
+        },
+
+        Tocbot : {
+            switch                : true,
+            tocSelector           : ".toc",
+            contentSelector       : ".article-body",
+            headingSelector       : "h1, h2, h3, h4, h5",
+            headingsOffset        : 0,
+            scrollSmooth          : true,
+            scrollSmoothOffset    : -5,
+            positionFixedSelector : ".toc",
+            positionFixedClass    : "toc-fixed",
+            fixedSidebarOffset    : "",
+        },
+
+        Require : {
+            baseUrl     : "/js/",
+            waitSeconds : 100
+        },
+
+        Music : {
+            type : "APlayer"
+        },
+        APlayer : {
+            container : ".aplayer",
+            fixed     : true,
+            autoplay  : false,
+            loop      : "all",
+            order     : "random",
+            preload   : "auto",
+            volume    : 0.67,
+            mutex     : true,
+            lrcType   : 3,
+            audio     : [
+                
+                    {
+                        name   : "Endless Tears",
+                        artist : "CLIFF EDGE",
+                        cover  : "/music/cover/Endless Tears.jpg",
+                        url    : "/music/song/Endless Tears.mp3",
+                        lrc    : "/music/lrc/Endless Tears.lrc"
+                    },
+                
+                    {
+                        name   : "幸福在歌唱",
+                        artist : "A-Lin",
+                        cover  : "/music/cover/幸福在歌唱-A-Lin.jpg",
+                        url    : "/music/song/幸福在歌唱-A-Lin.mp3",
+                        lrc    : "/music/lrc/幸福在歌唱-A-Lin.lrc"
+                    },
+                
+                    {
+                        name   : "笑忘歌",
+                        artist : "五月天",
+                        cover  : "/music/cover/笑忘歌-五月天.jpg",
+                        url    : "/music/song/笑忘歌-五月天.mp3",
+                        lrc    : "/music/lrc/笑忘歌-五月天.lrc"
+                    },
+                
+                    {
+                        name   : "最重要的小事",
+                        artist : "五月天",
+                        cover  : "/music/cover/最重要的小事-五月天.jpg",
+                        url    : "/music/song/最重要的小事-五月天.mp3",
+                        lrc    : "/music/lrc/最重要的小事-五月天.lrc"
+                    },
+                
+                    {
+                        name   : "Die For You",
+                        artist : "Grabbitz,VALORANT",
+                        cover  : "/music/cover/Die For You-Grabbitz,VALORANT.jpg",
+                        url    : "/music/song/Die For You-Grabbitz,VALORANT.mp3",
+                        lrc    : "/music/lrc/Die For You-Grabbitz,VALORANT.lrc"
+                    },
+                
+                    {
+                        name   : "SUPERPOWER",
+                        artist : "KISS OF LIFE,NATTY,Mark,Valorant",
+                        cover  : "/music/cover/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.jpg",
+                        url    : "/music/song/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.mp3",
+                        lrc    : "/music/lrc/SUPERPOWER-KISS OF LIFE,NATTY,Mark,Valorant.lrc"
+                    },
+                
+                    {
+                        name   : "Bad Guy",
+                        artist : "Billie Eilish",
+                        cover  : "/music/cover/Billie Eilish - Bad Guy.jpg",
+                        url    : "/music/song/Billie Eilish - Bad Guy.mp3",
+                        lrc    : "/music/lrc/Billie Eilish - Bad Guy.lrc"
+                    },
+                
+            ]
+        },
+        Meting : {
+            api      : "https://api.i-meto.com/meting/api",
+            id       : "3778678", 
+            lrcshow  : false, 
+            server   : "netease", 
+            type     : "playlist", 
+            fixed    : true, 
+            autoplay : false, 
+            loop     : "all", 
+            order    : "random", 
+            preload  : "auto", 
+            volume   : 0.67, 
+            mutex    : true
+        },
+
+        Mouse : {
+            enable  : true,
+            options : {
+                size  : 6,
+                sizeF : 24
+            }
+        },
+
+        LazyLoad : {
+            default : "/image/website/lazyload.svg"
+        },
+  
+        Style : {
+            aplayer          : "/css/APlayer.css",
+            archive          : "/css/archive.css",
+            base             : "/css/base.css",
+            clipboard        : "/css/clipboard.css",
+            code             : "/css/code.css",
+            donate           : "/css/donate.css",
+            fancybox         : "/css/jquery.fancybox.css",
+            footer           : "/css/footer.css",
+            iconfont         : "/iconfont/iconfont.css",
+            index            : "/css/index.css",
+            menuBubble       : "/css/menu-bubble.css",
+            mouse            : "/css/mouse.css",
+            page             : "/css/page.css",
+            post             : "/css/post.css",
+            search           : "/css/search.css",
+            tocbot           : "/css/tocbot.css",
+            valine           : "/css/valine.css",
+            waline           : "/css/waline.css",
+            walineCustom     : "/css/waline-custom.css"
+        },
+
+        Script: {
+            aplayer          : "/js/APlayer.min.js",
+            config           : "/js/require.config.js",
+            index            : "/js/index.js",
+            instantSearch    : "/js/instantsearch.min.js",
+            iscroll          : "/js/iscroll.js",
+            jQuery           : "/js/jquery-3.4.1.min.js",
+            loading          : "/js/loading.js",
+            meting           : "/js/Meting.min.js",
+            require          : "/js/require.min.js",
+            waline           : "/js/waline.mjs",
+            pageview         : "/js/pageview.mjs",
+            comment          : "/js/comment.mjs",
+        },
+
+        Font: {
+            LongCang    : "/font/LongCang.css",
+            Monda       : "/font/Monda.css",
+            NotoSansSC  : "/font/NotoSansSC.css",
+            NotoSerifSC : "/font/NotoSerifSC.css",
+            Playball    : "/font/Playball.css",
+            PTMono      : "/font/PTMono.css",
+            Roboto      : "/font/Roboto.css",
+            RobotoSlab  : "/font/RobotoSlab.css",
+            Rosario     : "/font/Rosario.css",
+            UbuntuMono  : "/font/UbuntuMono.css"
+        },
+
+        Suffix : {
+            about : "The world is vast, and I want to walk it with you."
+        },
+            
+        Theme : {
+            url  : "https://github.com/first19326/Hexo-LiveForCode",
+            name : "Hexo - Live For Code"
+        }  
+    };
+</script>
+    <script type="text/javascript" src="/js/index.js"></script>
+</body>
+</html>
